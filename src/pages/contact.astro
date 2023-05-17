@@ -1,0 +1,23 @@
+---
+import { SITE } from '~/config.mjs';
+import { getCanonical, getHomePermalink } from '~/utils/permalinks';
+import Layout from '~/layouts/PageLayout.astro';
+import ContactForm from '~/components/widgets/ContactForm.astro';
+import Banner from '~/components/widgets/Banner.astro';
+
+const meta = {
+	title: SITE.title,
+	description: SITE.description,
+	canonical: getCanonical(getHomePermalink()),
+};
+const page = {
+	title: 'Contact Greg',
+	description:
+		'Shrinkray Labs is a portfolio and blog by Greg Miller, owner of Shrinkray Interactive, LLC. I am focused on inclusive design to build a better web for everyone.',
+};
+---
+
+<Layout {meta}>
+	<Banner {page} />
+	<ContactForm />/
+</Layout>

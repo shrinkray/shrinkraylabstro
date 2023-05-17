@@ -46,6 +46,10 @@ export const headerData = {
       ]
     },
     {
+      text: 'Contact Greg',
+      href: getPermalink('/contact'),
+    },
+    {
       text: 'Articles',
       href: getBlogPermalink(),
     },
