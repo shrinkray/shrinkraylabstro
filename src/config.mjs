@@ -1,15 +1,15 @@
 import defaultImage from './assets/images/default.png';
 
 const CONFIG = {
-  name: 'AstroWind',
+  name: 'Shrinkraylabs Blog',
 
-  origin: 'https://astrowind.vercel.app',
+  origin: 'https://shrinkraylabs.vercel.app',
   basePathname: '/',
   trailingSlash: false,
 
-  title: 'AstroWind — Free template for create a website with Astro + Tailwind CSS',
+  title: 'Shrinkraylabs -- A blog and portfolio',
   description:
-    '🚀 Suitable for Startups, Small Business, Sass Websites, Professional Portfolios, Marketing Websites, Landing Pages & Blogs.',
+    'ShrinkrayLabs is a blog about the Semantic Web, Accessibility, and UX Engineering in the modern web.',
   defaultImage: defaultImage,
 
   defaultTheme: 'system', // Values: "system" | "light" | "dark" | "light:only" | "dark:only"
@@ -24,8 +24,8 @@ const CONFIG = {
     timeZone: 'UTC',
   }),
 
-  googleAnalyticsId: false, // or "G-XXXXXXXXXX",
-  googleSiteVerificationId: 'orcPxI47GSa-cRvY11tUe6iGg2IO_RPvnA1q95iEM3M',
+  googleAnalyticsId: 'G-W1BTE4CBJ9', 
+	googleSiteVerificationId: false, 
 
   blog: {
     disabled: false,

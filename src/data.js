@@ -3,42 +3,39 @@ import { getPermalink, getBlogPermalink, getAsset } from './utils/permalinks';
 export const headerData = {
   links: [
     {
-      text: 'Landing',
+      text: 'About',
+      href: '#',
+    },
+    {
+      text: 'Projects',
       links: [
         {
-          text: 'Sass',
-          href: getPermalink('/landing/saas'),
+          text: 'Case Studies',
+          href: '#',
         },
         {
-          text: 'Startup',
-          href: getPermalink('/landing/startup'),
+          text: 'Events',
+          href: '#',
         },
         {
-          text: 'Mobile App',
-          href: getPermalink('/landing/mobile-app'),
+          text: 'Consulting',
+          href: '#',
         },
+        {
+          text: 'Get Estimates',
+          href: '#',
+        },
+         {
+          text: 'Am I Available?',
+          href: '#',
+        },
+        
       ],
     },
     {
-      text: 'Pages',
+      text: 'Services',
       links: [
-        {
-          text: 'Features',
-          href: '#',
-        },
-        {
-          text: 'Pricing',
-          href: '#',
-        },
-        {
-          text: 'About us',
-          href: '#',
-        },
-        {
-          text: 'Contact',
-          href: '#',
-        },
-        {
+    {
           text: 'Terms',
           href: getPermalink('/terms'),
         },
@@ -46,19 +43,12 @@ export const headerData = {
           text: 'Privacy policy',
           href: getPermalink('/privacy'),
         },
-      ],
+      ]
     },
     {
-      text: 'Widgets',
-      href: '#',
-    },
-    {
-      text: 'Blog',
+      text: 'Articles',
       href: getBlogPermalink(),
     },
-  ],
-  actions: [
-    { type: 'button', text: 'Download', href: 'https://github.com/onwidget/astrowind' }
   ],
 };
   
