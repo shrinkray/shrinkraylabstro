@@ -1,0 +1,81 @@
+---
+import { Picture } from '@astrojs/image/components';
+import ItemGrid from '../ui/ItemGrid.astro';
+import Headline from '../ui/Headline.astro';
+
+interface Item {
+  title: string;
+  description?: string;
+  icon?: string;
+}
+
+export interface Props {
+  title?: string;
+  subtitle?: string;
+  highlight?: string;
+  content?: string;
+  items?: Array<Item>;
+  image?: string | any; // TODO: find HTMLElementProps
+  isReversed?: boolean;
+  isAfterContent?: boolean;
+  isDark?: boolean;
+}
+
+const {
+  title = await Astro.slots.render('title'),
+  subtitle = await Astro.slots.render('subtitle'),
+  highlight = await Astro.slots.render('highlight'),
+  content = await Astro.slots.render('content'),
+  items = [],
+  image = await Astro.slots.render('image'),
+  isReversed = false,
+  isAfterContent = false,
+  isDark = false,
+} = Astro.props;
+---
+
+<section class="relative">
+  <div class="absolute inset-0 pointer-events-none -z-[1]" aria-hidden="true">
+    <slot name="bg"><div class:list={['absolute inset-0', { 'bg-dark dark:bg-transparent': isDark }]}></div></slot>
+  </div>
+  <div class:list={[{ 'pt-0 md:pt-0': isAfterContent, dark: isDark }, 'relative text-default py-12 md:py-16 lg:py-20']}>
+    <Headline title={title} subtitle={subtitle} highlight={highlight} />
+    <div class="mx-auto max-w-7xl px-4 md:px-6 md:self-center">
+      <div class:list={['flex flex-col gap-8 md:flex-row md:gap-12', { 'md:flex-row-reverse': isReversed }]}>
+        <div class="md:basis-1/2 md:self-center">
+          {content && <div class="mb-10 text-lg" set:html={content} />}
+
+          <ItemGrid
+            items={items}
+            defaultIcon="tabler:check"
+            classes={{
+              container: '',
+              icon: 'w-7 h-7 bg-success text-gray-50 p-0.5 rounded-full mr-4',
+            }}
+          />
+        </div>
+        <div aria-hidden="true" class="md:basis-1/2">
+          {
+            image && (
+              <div class="relative m-auto max-w-4xl">
+                {typeof image === 'string' ? (
+                  <Fragment set:html={image} />
+                ) : (
+                  <Picture
+                    class="mx-auto w-full rounded-lg"
+                    width={500}
+                    height={500}
+                    widths={[400, 768]}
+                    sizes="(max-width: 768px) 100vw, 432px"
+                    aspectRatio="500:500"
+                    {...image}
+                  />
+                )}
+              </div>
+            )
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

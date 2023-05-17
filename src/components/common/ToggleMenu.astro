@@ -1,0 +1,58 @@
+---
+import { Icon } from 'astro-icon';
+
+export interface Props {
+  label?: string;
+  class?: string;
+  iconClass?: string;
+  iconName?: string;
+  altIconName?: string;
+}
+
+const {
+  label = 'Toggle Menu',
+  class:
+    className = 'ml-1 hover:bg-gray-100 dark:hover:bg-gray-800 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 inline-flex items-center transition',
+  iconClass = 'w-6 h-6 md:w-5 md:h-5',
+  iconName = 'tabler:menu',
+  altIconName = 'tabler:x',
+} = Astro.props;
+---
+
+<label class={className} aria-label={label} data-aw-toggle-menu>
+  <input type="checkbox" checked style="appearance: none;" />
+  <Icon name={iconName} data-aw-opened class={iconClass} />
+  <Icon name={altIconName} data-aw-closed class={iconClass} />
+</label>
+
+<style is:inline>
+  [data-aw-toggle-menu] {
+    position: relative;
+    user-select: none;
+    cursor: pointer;
+    display: flex;
+  }
+  [data-aw-toggle-menu] > * {
+    transition-duration: 0.2s;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-property: opacity;
+  }
+  [data-aw-toggle-menu] input {
+    appearance: none;
+  }
+  [data-aw-toggle-menu] [data-aw-opened] {
+    opacity: 0;
+  }
+  [data-aw-toggle-menu] [data-aw-closed] {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  [data-aw-toggle-menu] input:checked ~ [data-aw-closed] {
+    opacity: 0;
+  }
+  [data-aw-toggle-menu] input:checked ~ [data-aw-opened] {
+    opacity: 1;
+  }
+</style>

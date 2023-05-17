@@ -1,0 +1,123 @@
+---
+import merge from 'lodash.merge';
+import { AstroSeo } from '@astrolib/seo';
+import type { AstroSeoProps, OpenGraph } from '@astrolib/seo/src/types';
+import { getImage } from '@astrojs/image';
+
+import SITE from '~/utils/config.mjs';
+import I18N from '~/config/i18n';
+
+import { MetaData } from '~/types';
+import { getCanonical } from '~/utils/permalinks';
+// import { getRelativeUrlByFilePath } from '~/utils/directories';
+
+import { findImage } from '~/utils/images';
+
+export interface Props extends MetaData {}
+
+// FIXME: Review this for relative urls
+// new URL(getRelativeUrlByFilePath(_image.src), Astro.site)
+
+// FIXME: Don't do many times with default image
+const adaptOpenGraphImages = async (openGraph: OpenGraph = {}): Promise<OpenGraph> => {
+  if (!openGraph?.images?.length) {
+    return openGraph;
+  }
+
+  const images = openGraph.images;
+  const width = 1200;
+  const height = 626;
+
+  const adaptedImages = await Promise.all(
+    images.map(async (image) => {
+      if (image?.url) {
+        const resolvedImage = await findImage(image.url);
+        if (!resolvedImage) {
+          return {
+            url: '',
+          };
+        }
+
+        const _image = await getImage({
+          src: resolvedImage,
+          alt: 'Placeholder alt',
+          width: width,
+          height: height,
+        });
+
+        if (typeof _image === 'object') {
+          return {
+            url: typeof _image.src === 'string' ? String(new URL(_image.src, Astro.site)) : 'pepe',
+            width: typeof _image.width === 'number' ? _image.width : undefined,
+            height: typeof _image.height === 'number' ? _image.height : undefined,
+          };
+        }
+        return {
+          url: '',
+        };
+      }
+
+      return {
+        url: '',
+      };
+    })
+  );
+
+  return { ...openGraph, ...(adaptedImages ? { images: adaptedImages } : {}) };
+};
+
+const {
+  title,
+  ignoreTitleTemplate = false,
+  canonical = String(getCanonical(String(Astro.url.pathname))),
+  robots = {},
+  description,
+  openGraph = {},
+  twitter = {},
+} = Astro.props;
+
+const seoProps: AstroSeoProps = merge(
+  {
+    title: '',
+    titleTemplate: '%s',
+    canonical: canonical,
+    noindex: true,
+    nofollow: true,
+    description: undefined,
+    openGraph: {
+      url: canonical,
+      siteName: SITE?.name,
+      images: [],
+      locale: I18N?.locale || 'en',
+      type: 'website',
+    },
+    twitter: {
+      cardType: openGraph?.images?.length ? 'summary_large_image' : 'summary',
+    },
+  },
+  {
+    title: SITE?.metadata?.title?.default,
+    titleTemplate: SITE?.metadata?.title?.template,
+    noindex: typeof SITE?.metadata?.robots?.index !== 'undefined' ? !SITE.metadata.robots.index : undefined,
+    nofollow: typeof SITE?.metadata?.robots?.follow !== 'undefined' ? !SITE.metadata.robots.follow : undefined,
+    description: SITE?.metadata?.description,
+    openGraph: SITE?.metadata?.openGraph,
+    twitter: SITE?.metadata?.twitter,
+  },
+  {
+    title: title,
+    titleTemplate: ignoreTitleTemplate ? '%s' : undefined,
+    canonical: canonical,
+    noindex: typeof robots?.index !== 'undefined' ? !robots.index : undefined,
+    nofollow: typeof robots?.follow !== 'undefined' ? !robots.follow : undefined,
+    description: description,
+    openGraph: { url: canonical, ...openGraph },
+    twitter: twitter,
+  }
+);
+---
+
+<AstroSeo {...{ ...seoProps, openGraph: await adaptOpenGraphImages(seoProps?.openGraph) }} />
+
+<!-- Google Site Verification -->
+{SITE.googleSiteVerificationId && <meta name="google-site-verification" content={SITE.googleSiteVerificationId} />}

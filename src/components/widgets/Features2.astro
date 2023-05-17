@@ -1,0 +1,43 @@
+---
+import Headline from '~/components/ui/Headline.astro';
+import ItemGrid2 from '~/components/ui/ItemGrid2.astro';
+
+interface Item {
+  title?: string;
+  description?: string;
+  icon?: string;
+  iconClass?: string;
+}
+
+export interface Props {
+  title?: string;
+  subtitle?: string;
+  highlight?: string;
+  items: Array<Item>;
+  isDark?: boolean;
+}
+
+const {
+  title = await Astro.slots.render('title'),
+  subtitle = await Astro.slots.render('subtitle'),
+  highlight,
+  items = [],
+  isDark = false,
+} = Astro.props;
+---
+
+<section class="relative">
+  <div class="absolute inset-0 pointer-events-none -z-[1]" aria-hidden="true">
+    <slot name="bg"><div class:list={['absolute inset-0', { 'bg-dark dark:bg-transparent': isDark }]}></div></slot>
+  </div>
+  <div class:list={['relative max-w-7xl mx-auto px-4 md:px-6', { dark: isDark }]}>
+    <div class="py-12 md:py-16 lg:py-20">
+      <Headline title={title} subtitle={subtitle} highlight={highlight} />
+      <ItemGrid2 items={items} classes={{
+        container: "gap-4 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4",
+        panel: "bg-white border border-transparent dark:bg-slate-900 dark:border-slate-800 hover:shadow-md p-6 relative rounded shadow-lg transition",
+        icon: "w-16 h-16 md:w-20 md:h-20"
+      }}/>
+    </div>
+  </div>
+</section>

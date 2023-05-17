@@ -1,0 +1,15 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Headline from '~/components/widgets/Headline2.astro';
+import Background from '~/components/ui/Background.astro';
+
+const metadata = {
+  title: 'Features',
+};
+---
+
+<Layout {metadata}>
+  <Headline title="Features">
+    <Background slot="bg" class="bg-gray-100 dark:bg-slate-800" />
+  </Headline>
+</Layout>
