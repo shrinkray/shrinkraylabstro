@@ -33,28 +33,32 @@ const {
 		
 			<div class="">
 				<div
-					class="relative w-full rounded bg-[url('~/assets/images/design-sketchbook.webp')] bg-center bg-fill bg-no-repeat flex lg:justify-center"
+					class=" flex relative w-full rounded-md sm:bg-[url('~/assets/images/design-sketchbook.webp')] bg-left bg-fill bg-no-repeat  lg:justify-center"
 				>
-					<div class="pl-4 flex flex-col basis-6/7 sm:basis-1/2 justify-center space-around text-gray-800">
-						<h2 class="font-extrabold text-4xl lg:text-6xl">UX Engineer & Accessiblity Dev</h2><p class="lg:text-4xl text-violet-700">
+					<div class="pl-4 flex flex-col  justify-center space-around text-gray-800">
+						<h2 class="font-extrabold text-4xl lg:text-6xl">
+              <span class="whitespace-nowrap">Accessibility &</span>
+              <span class="whitespace-nowrap">UX Engineer</span>
+            </h2>
+              <p class="mt-4"><span class="text-3xl p-1 bg-violet-800 lg:text-4xl text-white">
 							Builder of web UI
-						</p>
+              </span></p>
 					</div>
 					<Picture
 						id="hero-image"
 						src={import('~/assets/images/avatar-black-gm.png')}
-						class="basis-1/6 mr-9 sm:mr-0 lg:basis-1/2"
+						class="hidden sm:flex basis-1/6 mr-9 sm:mr-0 lg:basis-1/2"
 						widths={[500, 500]}
 						sizes=" (max-width: 600px) 900px, 768px"
 						alt="An open planning sketchbook with a pencil on top of a desk."
 						aspectRatio="1:1"
 					/>
 				</div>
-				<div class="max-w-3xl mx-auto py-12 md:py-10 flex flex-col gap-y-4">
+				<div class="max-w-full text-center mx-auto py-12 md:py-10 flex flex-col gap-y-4">
 					{
           title && (
             <h1
-              class="text-4xl md:text-6xl font-bold  tracking-tighter mb-4 font-heading bg-clip-text text-transparent bg-gradient-to-r from-cyan-500 to-violet-500 dark:from-primary-300 dark:to-secondary-300"
+              class="text-4xl mb-0 md:text-6xl font-bold  tracking-tighter mb-4 font-heading bg-clip-text text-transparent bg-gradient-to-r from-cyan-500 to-violet-500 dark:from-primary-300 dark:to-secondary-300"
               set:html={title}
             />
           )
@@ -73,7 +77,7 @@ const {
 						range of interests, I actively contribute to teams and organize tech events in the vibrant Toledo Region.
 					</p>
 
-        <div class="max-w-xs sm:max-w-md m-auto flex flex-nowrap flex-col sm:flex-row sm:justify-center gap-4">
+        <div class="max-w-xs sm:max-w-md m-auto flex flex-nowrap flex-col sm:flex-row sm:justify-center gap-4 my-8">
             {
               callToAction && (
                 <div class="flex w-full sm:w-auto">
@@ -112,7 +116,7 @@ const {
             }
           </div>
 
-          {subtitle && <p class="text-xl text-muted mb-6 dark:text-slate-300" set:html={subtitle} />}
+          {subtitle && <p class="text-xl text-center text-muted mb-6 dark:text-slate-300" set:html={subtitle} />}
           
         </div>
         {content && <Fragment set:html={content} />}
