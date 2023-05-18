@@ -1,10 +1,11 @@
+import { get } from './pages/rss.xml';
 import { getPermalink, getBlogPermalink, getAsset } from './utils/permalinks';
 
 export const headerData = {
   links: [
     {
       text: 'About',
-      href: '#',
+      href: getPermalink('/about'),
     },
     {
       text: 'Projects',
