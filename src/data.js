@@ -37,7 +37,7 @@ export const headerData = {
         },
         {
           text: 'UX Engineering',
-          href: getPermalink('#'),
+          href: getPermalink('/ux-engineering'),
         },
       ]
     },
@@ -92,6 +92,6 @@ export const footerData = {
   ],
   footNote: `
     <span class="w-5 h-5 md:w-6 md:h-6 md:-mt-0.5 bg-cover mr-1.5 float-left rounded-sm bg-[url(~/assets/images/favicon-48x48.png)]"></span>
-    Made by <a class="text-blue-600 hover:underline dark:text-gray-200" href="https://shrinkraylabs.com/">Shrinkray Labs</a> · All rights reserved.
+    Made with ❤️ love by <a class="text-blue-600 hover:underline dark:text-gray-200" href="https://shrinkraylabs.com/">Shrinkray Labs</a> · All rights reserved.
   `,
 };

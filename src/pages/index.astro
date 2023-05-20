@@ -5,12 +5,12 @@ import Layout from '~/layouts/PageLayout.astro';
 import Hero from '~/components/widgets/SketchbookHero.astro';
 import Note from '~/components/widgets/Note.astro';
 import Features from '~/components/widgets/Features.astro';
-import Features2 from '~/components/widgets/Features2.astro';
+//import Features2 from '~/components/widgets/Features2.astro';
 import Steps from '~/components/widgets/Steps.astro';
 import Content from '~/components/widgets/Content.astro';
 import LatestPosts from '~/components/blog/LatestPosts.astro';
-import FAQs from '~/components/widgets/FAQs.astro';
-import Stats from '~/components/widgets/Stats.astro';
+//import FAQs from '~/components/widgets/FAQs.astro';
+//import Stats from '~/components/widgets/Stats.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 
 const meta = {
@@ -93,83 +93,6 @@ const meta = {
     ]}
   />
 
-  <!-- Content Widget **************** -->
-
-  <Content
-    highlight="UX Engineering"
-    title="An overview of services"
-    items={[
-      {
-        title: 'Prototyping and Interactions',
-        description:
-          'Experience clickable links and user flows simulating user interactions to test and validate your ideas.',
-      },
-      {
-        title: 'Design Systems and Component Libraries',
-        description:
-          'A library of reusable components, styles, and assets. Ensures consistency and accelerates the design process, as components can be easily shared and reused across projects.',
-      },
-      {
-        title: 'Collaboration and Handoff',
-        description:
-          'A platform which streamlines the design-to-development workflow, reducing communication gaps and increasing efficiency.',
-      },
-    ]}
-    image={{
-      src: import('~/assets/images/code-figma-people.jpg'),
-      alt: 'Colorful Image',
-    }}
-  >
-    <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">From collaborative design...</h3>
-      Figma is a powerful design and prototyping tool that offers a range of benefits to individuals and teams involved in the design process. 
-    </Fragment>
-  </Content>
-
-  <!-- Content Widget **************** -->
-
-  <Content
-  
-    isReversed
-    isAfterContent
-    items={[
-      {
-        title: 'Collaboration with designers',
-        description: 'Work closely with UX designers to understand and translate their design concepts into functional UI components and interactions.',
-      },
-      {
-        title: 'Frontend development',
-        description: 'Utilizing frontend skills to build out the UI and interactions that aligns with the UX design vision.',
-      },
-      {
-        title: 'Prototyping and interaction development',
-        description: 'Validating the user experience before final implementation by building rich iterfaces and interactions.',
-      },
-      {
-        title: 'Design systems and component libraries',
-        description: 'Creating reusable UI components, styles, and patterns to streamline the development process, to help maintain a cohesive user experience across the product.',
-      },
-      {
-        title: 'Continuous improvement',
-        description: 'Ensure a seamless integration and data exchange between the front-end and back-end systems, while maintaining the user experience and performance standards.',
-      },
-      {
-        title: 'Usability and accessibility',
-        description: 'Analyze user feedback, conduct usability testing, and monitor user interactions to identify areas for improvement.',
-      },
-    ]}
-    image={{
-      src: import('~/assets/images/code-mobile-app.jpg'),
-      alt: 'Vintage Image',
-    }}
-
-  >
-    <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white text-center sm:text-left sm:text-3xl mb-2">... to UX engineering</h3>
-       UX engineers bridge the gap between design and development, ensuring that the user interface (UI) designs are implemented effectively and interactively.
-    </Fragment>
-
-</Content>
 
   <!-- Steps Widget ****************** -->
 
