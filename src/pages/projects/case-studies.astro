@@ -3,7 +3,8 @@ import { SITE } from '~/config.mjs';
 import { getCanonical, getHomePermalink } from '~/utils/permalinks';
 import Layout from '~/layouts/PageLayout.astro';
 import Banner from '~/components/widgets/Banner.astro';
-import LatestPosts from '~/components/blog/LatestPosts.astro';
+//import LatestPosts from '~/components/blog/LatestPosts.astro';
+import HighlightedPosts from '~/components/blog/HighlightedPosts.astro';
 
 const meta = {
 	title: SITE.title,
@@ -21,12 +22,11 @@ const items = []
 <Layout {meta}>
 	<Banner {page} />
 
-	<LatestPosts
+	<HighlightedPosts
     title="<span class='tracking-tight'>Case Studies</span>"
-    information={`This blog will contain posts about my interests in web development, design, and other topics.
+    information={`This blog will contain information about specific client projects.
 		`}
     postIds={[
-      'try-utm-virtual-machine-on-silicone-mac.mdx ',
       'new-look-makerspace-website-bigfablab.mdx',
       'national-scenic-byways-foundation.md',
       'university-michigan-icpsr-component-library.md',
