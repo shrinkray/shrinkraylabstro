@@ -1,0 +1,126 @@
+---
+import { Icon } from 'astro-icon';
+import { Picture } from '@astrojs/image/components';
+
+interface CallToAction {
+  text: string;
+  href: string;
+  icon?: string;
+}
+
+export interface Props {
+  title?: string;
+  subtitle?: string;
+  callToAction?: string | CallToAction;
+  callToAction2?: string | CallToAction;
+  content?: string;
+  image?: string | any; // TODO: find HTMLElementProps
+}
+
+const {
+  title = await Astro.slots.render('title'),
+  subtitle = await Astro.slots.render('subtitle'),
+  content = await Astro.slots.render('content'),
+  callToAction = await Astro.slots.render('callToAction'),
+  callToAction2 = await Astro.slots.render('callToAction2'),
+  image = await Astro.slots.render('image'),
+} = Astro.props;
+---
+
+<section>
+	<div class="max-w-6xl mx-auto px-4 sm:px-6">
+		<div class="py-12 md:py-6">
+		
+			<div class="">
+				<div
+					class=" flex relative w-full rounded-md sm:bg-[url('~/assets/images/design-sketchbook.webp')] bg-left bg-fill bg-no-repeat  lg:justify-center"
+				>
+					<div class="pl-4 flex flex-col  justify-center space-around text-gray-800">
+						<h2 class="font-extrabold text-4xl lg:text-6xl dark:text-white sm:dark:text-gray-800">
+              <span class="whitespace-nowrap">Accessibility &</span>
+              <span class="whitespace-nowrap">UX Engineer</span>
+            </h2>
+              <p class="mt-4"><span class="text-3xl p-1 bg-violet-800 lg:text-4xl text-white">
+							Builder of web UI
+              </span></p>
+					</div>
+					<Picture
+						id="hero-image"
+						src={import('~/assets/images/avatar-black-gm.png')}
+						class="hidden sm:flex basis-1/6 mr-9 sm:mr-0 lg:basis-1/2"
+						widths={[500, 500]}
+						sizes=" (max-width: 600px) 900px, 768px"
+						alt="An open planning sketchbook with a pencil on top of a desk."
+						aspectRatio="1:1"
+					/>
+				</div>
+				<div class="max-w-full text-center mx-auto py-12 md:py-10 flex flex-col gap-y-4">
+					{
+          title && (
+            <h1
+              class="text-4xl mb-0 md:text-6xl font-bold  tracking-tighter pb-4 font-heading bg-clip-text text-transparent bg-gradient-to-r from-cyan-500 to-violet-500 dark:from-primary-300 dark:to-secondary-300"
+              set:html={title}
+            />
+          )
+        }
+				</div>
+			</div>
+      <div class="max-w-3xl mx-auto">
+
+        <p class="text-xl text-muted mb-6 dark:text-slate-100">
+						Shrinkray Labs is a portfolio and blog by Greg Miller, owner of Shrinkray Interactive, LLC. I am focused on
+						inclusive design to build a better web for everyone.
+						<span class="inline sm:hidden">...</span>
+					</p><p class="hidden sm:inline text-lg">
+						👋🏼 Hello, everyone! I'm passionate about creating an inclusive and fair digital landscape, where the
+						implementation and utilization of technology are carefully orchestrated without ambiguity. With a broad
+						range of interests, I actively contribute to teams and organize tech events in the vibrant Toledo Region.
+					</p>
+
+        <div class="max-w-xs sm:max-w-md m-auto flex flex-nowrap flex-col sm:flex-row sm:justify-center gap-4 my-8">
+            {
+              callToAction && (
+                <div class="flex w-full sm:w-auto">
+                  {typeof callToAction === 'string' ? (
+                    <Fragment set:html={callToAction} />
+                  ) : (
+                    <a class="btn btn-primary sm:mb-0 w-full" href={callToAction?.href} target="_blank" rel="noopener">
+                      {callToAction?.icon && (
+                        <>
+                          <Icon name={callToAction.icon} class="w-5 h-5 mr-1 -ml-1.5" />{' '}
+                        </>
+                      )}
+                      {callToAction?.text}
+                    </a>
+                  )}
+                </div>
+              )
+            }
+            {
+              callToAction2 && (
+                <div class="flex w-full sm:w-auto">
+                  {typeof callToAction2 === 'string' ? (
+                    <Fragment set:html={callToAction2} />
+                  ) : (
+                    <a class="btn w-full" href={callToAction2?.href}>
+                      {callToAction2?.icon && (
+                        <>
+                          <Icon name={callToAction2.icon} class="w-5 h-5 mr-1 -ml-1.5" />{' '}
+                        </>
+                      )}
+                      {callToAction2.text}
+                    </a>
+                  )}
+                </div>
+              )
+            }
+          </div>
+
+          {subtitle && <p class="text-xl text-center text-muted mb-6 dark:text-slate-300" set:html={subtitle} />}
+          
+        </div>
+        {content && <Fragment set:html={content} />}
+      </div>
+		</div>
+	</div>
+</section>

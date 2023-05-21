@@ -1,111 +1,81 @@
+import { get } from './pages/rss.xml';
 import { getPermalink, getBlogPermalink, getAsset } from './utils/permalinks';
 
 export const headerData = {
   links: [
     {
-      text: 'Landing',
+      text: 'About',
+      href: getPermalink('/about'),
+    },
+    {
+      text: 'Projects',
       links: [
         {
-          text: 'Sass',
-          href: getPermalink('/landing/saas'),
+          text: 'Case Studies',
+          href: '#',
         },
         {
-          text: 'Startup',
-          href: getPermalink('/landing/startup'),
+          text: 'Consulting',
+          href: '#',
         },
         {
-          text: 'Mobile App',
-          href: getPermalink('/landing/mobile-app'),
+          text: 'Get Estimates',
+          href: '#',
         },
       ],
     },
     {
-      text: 'Pages',
+      text: 'Services',
       links: [
         {
-          text: 'Features',
-          href: '#',
-        },
-        {
-          text: 'Pricing',
-          href: '#',
-        },
-        {
-          text: 'About us',
-          href: '#',
-        },
-        {
-          text: 'Contact',
-          href: '#',
-        },
-        {
-          text: 'Terms',
+          text: 'Accessibility, Web Performance, & SEO',
           href: getPermalink('/terms'),
         },
         {
-          text: 'Privacy policy',
-          href: getPermalink('/privacy'),
+          text: 'Web Design & Development',
+          href: getPermalink('#'),
         },
-      ],
+        {
+          text: 'UX Engineering',
+          href: getPermalink('/ux-engineering'),
+        },
+      ]
     },
     {
-      text: 'Widgets',
-      href: '#',
+      text: 'Contact Greg',
+      href: getPermalink('/contact'),
     },
     {
-      text: 'Blog',
+      text: 'Articles',
       href: getBlogPermalink(),
     },
-  ],
-  actions: [
-    { type: 'button', text: 'Download', href: 'https://github.com/onwidget/astrowind' }
   ],
 };
   
 export const footerData = {
   links: [
     {
-      title: 'Product',
+      title: 'Projects',
       links: [
-        { text: 'Features', href: '#' },
-        { text: 'Security', href: '#' },
-        { text: 'Team', href: '#' },
-        { text: 'Enterprise', href: '#' },
-        { text: 'Customer stories', href: '#' },
+        { text: 'Case Studies', href: '#' },
         { text: 'Pricing', href: '#' },
         { text: 'Resources', href: '#' },
       ],
     },
     {
-      title: 'Platform',
+      title: 'Services',
       links: [
-        { text: 'Developer API', href: '#' },
-        { text: 'Partners', href: '#' },
-        { text: 'Atom', href: '#' },
-        { text: 'Electron', href: '#' },
-        { text: 'AstroWind Desktop', href: '#' },
-      ],
-    },
-    {
-      title: 'Support',
-      links: [
-        { text: 'Docs', href: '#' },
-        { text: 'Community Forum', href: '#' },
-        { text: 'Professional Services', href: '#' },
-        { text: 'Skills', href: '#' },
-        { text: 'Status', href: '#' },
+        { text: 'Accessibility', href: '#' },
+        { text: 'Web Performance', href: '#' },
+        { text: 'Web Development', href: '#' },
       ],
     },
     {
       title: 'Company',
       links: [
-        { text: 'About', href: '#' },
-        { text: 'Blog', href: '#' },
-        { text: 'Careers', href: '#' },
-        { text: 'Press', href: '#' },
-        { text: 'Inclusion', href: '#' },
-        { text: 'Social Impact', href: '#' },
-        { text: 'Shop', href: '#' },
+        { text: 'About Greg', href: '/about' },
+        { text: 'Contact Me', href: '/contact' },
+        { text: 'Articles', href: getBlogPermalink() },
       ],
     },
   ],
@@ -114,14 +84,14 @@ export const footerData = {
     { text: 'Privacy Policy', href: getPermalink('/privacy') },
   ],
   socialLinks: [
-    { ariaLabel: 'Twitter', icon: 'tabler:brand-twitter', href: '#' },
-    { ariaLabel: 'Instagram', icon: 'tabler:brand-instagram', href: '#' },
-    { ariaLabel: 'Facebook', icon: 'tabler:brand-facebook', href: '#' },
+    { ariaLabel: 'Twitter', icon: 'tabler:brand-twitter', href: 'https://www.twitter.com/grmiller' },
+    { ariaLabel: 'Instagram', icon: 'tabler:brand-linkedin', href: 'https://www.linkedin.com/in/gregraymiller/' },
+    { ariaLabel: 'Facebook', icon: 'tabler:brand-facebook', href: 'https://www.facebook.com/gregraymiller' },
     { ariaLabel: 'RSS', icon: 'tabler:rss', href: getAsset('/rss.xml') },
-    { ariaLabel: 'Github', icon: 'tabler:brand-github', href: 'https://github.com/onwidget/astrowind' },
+    { ariaLabel: 'Github', icon: 'tabler:brand-github', href: 'https://github.com/shrinkray' },
   ],
   footNote: `
-    <span class="w-5 h-5 md:w-6 md:h-6 md:-mt-0.5 bg-cover mr-1.5 float-left rounded-sm bg-[url(https://onwidget.com/favicon/favicon-32x32.png)]"></span>
-    Made by <a class="text-blue-600 hover:underline dark:text-gray-200" href="https://onwidget.com/"> onWidget</a> · All rights reserved.
+    <span class="w-5 h-5 md:w-6 md:h-6 md:-mt-0.5 bg-cover mr-1.5 float-left rounded-sm bg-[url(~/assets/images/favicon-48x48.png)]"></span>
+    Made with ❤️ love by <a class="text-blue-600 hover:underline dark:text-gray-200" href="https://shrinkraylabs.com/">Shrinkray Labs</a> · All rights reserved.
   `,
 };

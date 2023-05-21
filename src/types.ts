@@ -36,3 +36,10 @@ export interface MetaSEO {
   ogTitle?: string;
   ogType?: string;
 }
+
+  export interface SVGAttributes {
+    alt?: string;
+    title?: string;
+    role?: string;
+    id?: string;
+  }
