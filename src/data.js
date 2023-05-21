@@ -12,7 +12,7 @@ export const headerData = {
       links: [
         {
           text: 'Case Studies',
-          href: '#',
+          href: getPermalink('/projects/case-studies'),
         },
         {
           text: 'Consulting',
@@ -57,7 +57,7 @@ export const footerData = {
     {
       title: 'Projects',
       links: [
-        { text: 'Case Studies', href: '#' },
+        { text: 'Case Studies', href: getPermalink('/case-studies') },
         { text: 'Pricing', href: '#' },
         { text: 'Resources', href: '#' },
       ],
@@ -73,8 +73,8 @@ export const footerData = {
     {
       title: 'Company',
       links: [
-        { text: 'About Greg', href: '/about' },
-        { text: 'Contact Me', href: '/contact' },
+        { text: 'About Greg', href: getPermalink('/about') },
+        { text: 'Contact Me', href: getPermalink('/contact') },
         { text: 'Articles', href: getBlogPermalink() },
       ],
     },
