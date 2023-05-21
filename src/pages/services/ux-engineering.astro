@@ -2,15 +2,25 @@
 import { SITE } from '~/config.mjs';
 import Layout from '~/layouts/PageLayout.astro';
 
+import Banner from '~/components/widgets/Banner.astro';
 import Content from '~/components/widgets/Content.astro';
+
 const meta = {
   title: SITE.title,
   description: SITE.description,
   dontUseTitleTemplate: true,
 };
+
+const page = {
+	title: 'UX Engineering',
+	description:
+		'UXE Consulting description',
+};
 ---
 
 <Layout {meta}>
+
+  	<Banner {page} />
 
  <!-- Content Widget **************** -->
 

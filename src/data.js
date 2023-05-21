@@ -16,11 +16,11 @@ export const headerData = {
         },
         {
           text: 'Consulting',
-          href: '#',
+          href: getPermalink('/projects/consulting'),
         },
         {
           text: 'Get Estimates',
-          href: '#',
+          href: getPermalink('/projects/get-estimates'),
         },
       ],
     },
@@ -29,15 +29,15 @@ export const headerData = {
       links: [
         {
           text: 'Accessibility, Web Performance, & SEO',
-          href: getPermalink('/terms'),
+          href: getPermalink('services/accessibility'),
         },
         {
           text: 'Web Design & Development',
-          href: getPermalink('#'),
+          href: getPermalink('services/web-performance'),
         },
         {
           text: 'UX Engineering',
-          href: getPermalink('/ux-engineering'),
+          href: getPermalink('services/ux-engineering'),
         },
       ]
     },
