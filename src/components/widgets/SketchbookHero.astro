@@ -32,12 +32,12 @@ const {
 		<div class="py-12 md:py-6">
 		
 			
-				<div
-					class=" flex flex-row flex-wrap md:flex-nowrap  justify-center relative w-full rounded-md sm:bg-[url('~/assets/images/design-sketchbook.webp')] bg-left bg-fill bg-no-repeat  lg:justify-center col-gap-4 md:py-12"
+				<div 
+					class=" flex flex-row flex-wrap md:flex-nowrap  justify-center relative w-full rounded-md sm:bg-[url('~/assets/images/design-sketchbook-op45.webp')]  sm:dark:bg-slate-200 bg-left bg-fill bg-no-repeat  lg:justify-center col-gap-4 md:py-12"
 				>
       <!-- left-side -->
-					<div class="md:pl-4 flex flex-col items-center justify-center space-around text-gray-800">
-						<h2 class="font-extrabold text-4xl lg:text-6xl dark:text-white sm:dark:text-gray-800 text-center md:text-start">
+					<div class="md:pl-4 flex flex-col items-center justify-center space-around text-gray-800" >
+						<h2 class="font-extrabold text-4xl md:text-5xl dark:text-white sm:dark:text-gray-800 text-center md:text-start">
               <span class="whitespace-nowrap">Accessibility &</span>
               <span class="whitespace-nowrap">UX Engineer</span>
             </h2>
@@ -46,7 +46,7 @@ const {
               </span></p>
 					</div>
       <!-- right side -->
-          <div class="flex flex-col  w-full gap-y-4 pr-4 my-8">
+          <div class="flex flex-col  w-full gap-y-4 pr-4 my-8" >
         <!-- Image + (greeting + buttons) -->
             <div class="flex flex-col items-center gap-y-4">
 
@@ -54,7 +54,7 @@ const {
                 <Picture
                 id="hero-image"
                 src={import('~/assets/images/greg-headshot.webp')}
-                class="flex  rounded-full border-3 border-white"
+                class="flex  rounded-full border-3 border-slate-700 shadow-xl"
                 widths={[100, 100]}
                 sizes="(max-width: 3rem)"
                 alt=""
@@ -65,7 +65,7 @@ const {
               
 
               <div class="flex flex-col row-gap-4 max-w-prose">
-                <p class="inline text-2xl text-center">
+                <p class="inline text-2xl text-center sm:dark:text-gray-800">
                   👋🏼 Hello, everyone! I'm passionate about creating an inclusive and fair digital landscape.
                 </p>
               </div>
@@ -97,7 +97,7 @@ const {
                         {typeof callToAction2 === 'string' ? (
                           <Fragment set:html={callToAction2} />
                         ) : (
-                          <a class="btn w-full " href={callToAction2?.href}>
+                          <a class="btn w-full dark:hover:bg-violet-400 dark:hover:border-violet-300 dark:hover:text-slate-800 dark:text-white dark:border-4 md:dark:bg-slate-700 md:dark:hover:bg-slate-900 md:dark:hover:text-white" href={callToAction2?.href}>
                             {callToAction2?.icon && (
                               <>
                                 <Icon name={callToAction2.icon} class="w-5 h-5 mr-1 -ml-1.5" />{' '}
@@ -143,3 +143,5 @@ const {
 		</div>
 	</div>
 </section>
+
+ 

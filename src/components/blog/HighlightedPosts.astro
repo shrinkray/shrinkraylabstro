@@ -47,7 +47,7 @@ const posts = await findPostsByIds(postIds);
       }
     </div>
 
-    {information && <p class="text-muted dark:text-slate-400 lg:text-sm lg:max-w-md" set:html={information} />}
+    {information && <p class="text-muted dark:text-slate-400 lg:text-xl lg:max-w-md" set:html={information} />}
   </div>
 
   <GridFull posts={posts} />
