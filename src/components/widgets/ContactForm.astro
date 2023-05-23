@@ -1,19 +1,34 @@
 ---
-//import { Icon } from 'astro-icon';
+import { Icon } from 'astro-icon';
+import { Picture } from '@astrojs/image/components';
 ---
 
 <section class="relative">
 	<div class="max-w-6xl mx-auto px-4 sm:px-6">
 		<div class="pb-12 md:pb-20">
-			<div class="max-w-3xl mx-auto text-center p-6 rounded-md shadow-xl dark:shadow-none">
-				<div class="">
-					<div class="flex items-center full-w dark:bg-gray-900">
+			<div class="max-w-3xl mx-auto text-center md:p-6 rounded-md shadow-xl ">
+				<div class="flex items-center full-w md:dark:bg-gray-800">
 						<div class="container mx-auto">
-							<div class="full-w mx-auto mb-10 p-5 rounded-md shadow-sm">
-								<div class="text-start">
-									<p class="mb-8 text-xl text-gray-600 dark:text-slate-400">
-										Hello, Would you be interested in a free consultation? If so, please fill out the form below and I'll get back to you as soon as possible.
-									</p>
+							<div class="flex flex-col items-center gap-y-4">
+										<div class="flex flex-col items-center gap-y-4 md:flex-row md:gap-y-0 md:gap-x-0 md:p-x-7">
+
+												<div class="flex flex-col items-center justify-center h-24 w-24 md:h-48 md:w-48 md:pl-7">
+													<Picture
+													id="hero-image"
+													src={import('~/assets/images/greg-headshot.webp')}
+													class="flex  rounded-full border-3 border-slate-700 shadow-xl"
+													widths={[100, 100]}
+													sizes="(max-width: 3rem)"
+													alt=""
+													aspectRatio="1:1"
+												/>
+												</div>
+												<div class="flex">
+													<p class="text-2xl px-6 md:py-0  md:text-3xl text-gray-600 dark:text-slate-400">
+														<span class="font-bold">Hello, Let's connect! </span><span class="hidden md:inline">I'm always open to new opportunities and collaborations.</span>
+													</p>
+												</div>
+								</div>
 								</div>
 								<div class="m-7 text-left">
 									<form
@@ -86,11 +101,8 @@
 										<p class="text-base text-center text-gray-400" id="result"></p>
 									</form>
 								</div>
-							</div>
-						</div>
 					</div>
 				</div>
-			</div>
 		</div>
 	</div>
 </section>
