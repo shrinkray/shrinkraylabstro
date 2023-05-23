@@ -12,6 +12,7 @@ import LatestPosts from '~/components/blog/LatestPosts.astro';
 //import FAQs from '~/components/widgets/FAQs.astro';
 //import Stats from '~/components/widgets/Stats.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
+import Flask from '~/components/Flask.astro';
 
 const meta = {
   title: SITE.title,
@@ -30,11 +31,11 @@ const meta = {
   >
   
     <Fragment slot="title">
-      Shrinkray Labs 
+      Shrinkray<Flask />Labs
     </Fragment>
 
     <Fragment slot="subtitle">
-      <p class="text-lg text-center">I build a variety of websites plus services for 📦 eCommerce, 💳 Small Business, Saas, Professional Portfolios, 💼 Marketing Websites, Landing Pages & More.</p>
+      <p class="text-2xl text-center">I build a variety of websites plus services for 📦 eCommerce, 💳 Small Business, Saas, Professional Portfolios, 💼 Marketing Websites, Landing Pages & More.</p>
       <span class="block mb-1 py-4 text-2xl font-bold text-blue-600 text-center">I look forward to connecting with you!</span> 
     </Fragment>
   </Hero>
@@ -42,6 +43,8 @@ const meta = {
   <!-- Note Widget ******************* -->
 
   <Note />
+
+  
 
   <!-- Features Widget *************** -->
 
@@ -130,7 +133,7 @@ const meta = {
     ]}
     image={{
       src: import('~/assets/images/sharing.webp'),
-      alt: 'Steps image',
+      alt: 'Three ',
     }}
   />
 

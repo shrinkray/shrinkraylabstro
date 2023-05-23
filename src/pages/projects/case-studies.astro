@@ -1,0 +1,36 @@
+---
+import { SITE } from '~/config.mjs';
+import { getCanonical, getHomePermalink } from '~/utils/permalinks';
+import Layout from '~/layouts/PageLayout.astro';
+import Banner from '~/components/widgets/Banner.astro';
+//import LatestPosts from '~/components/blog/LatestPosts.astro';
+import HighlightedPosts from '~/components/blog/HighlightedPosts.astro';
+
+const meta = {
+	title: SITE.title,
+	description: SITE.description,
+	canonical: getCanonical(getHomePermalink()),
+};
+const page = {
+	title: 'Case Studies',
+	description:
+		'Case studies of my work in web development, design, and other topics.',
+};
+const items = []
+---
+
+<Layout {meta}>
+	<Banner {page} />
+
+	<HighlightedPosts
+    title="<span class='tracking-tight'>Reflections on projects work...</span>"
+    information={`Projects describing specific deliverables, including design, development, and other topics.
+		`}
+    postIds={[
+      'new-look-makerspace-website-bigfablab.mdx',
+      'university-michigan-icpsr-component-library.md',
+			'national-scenic-byways-foundation.md',
+    ]}
+  />
+
+</Layout>

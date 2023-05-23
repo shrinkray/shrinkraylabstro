@@ -1,5 +1,6 @@
 ---
-import Grid from '~/components/blog/Grid.astro';
+//import Grid from '~/components/blog/Grid.astro';
+import GridFull from '~/components/blog/GridFull.astro';
 
 import { getBlogPermalink } from '~/utils/permalinks';
 import { findPostsByIds } from '~/utils/blog';
@@ -46,8 +47,8 @@ const posts = await findPostsByIds(postIds);
       }
     </div>
 
-    {information && <p class="text-muted dark:text-slate-400 lg:text-sm lg:max-w-md" set:html={information} />}
+    {information && <p class="text-muted dark:text-slate-400 lg:text-xl lg:max-w-md" set:html={information} />}
   </div>
 
-  <Grid posts={posts} />
+  <GridFull posts={posts} />
 </section>

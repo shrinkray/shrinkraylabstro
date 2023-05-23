@@ -12,15 +12,15 @@ export const headerData = {
       links: [
         {
           text: 'Case Studies',
-          href: '#',
+          href: getPermalink('/projects/case-studies'),
         },
         {
           text: 'Consulting',
-          href: '#',
+          href: getPermalink('/projects/consulting'),
         },
         {
           text: 'Get Estimates',
-          href: '#',
+          href: getPermalink('/projects/get-estimates'),
         },
       ],
     },
@@ -28,16 +28,24 @@ export const headerData = {
       text: 'Services',
       links: [
         {
-          text: 'Accessibility, Web Performance, & SEO',
-          href: getPermalink('/terms'),
+          text: 'My Services',
+          href: getPermalink('services/my-services'),
         },
         {
-          text: 'Web Design & Development',
-          href: getPermalink('#'),
+          text: 'Accessibility',
+          href: getPermalink('services/accessibility'),
         },
         {
           text: 'UX Engineering',
-          href: getPermalink('/ux-engineering'),
+          href: getPermalink('services/ux-engineering'),
+        },
+        {
+          text: 'Web Performance, & SEO',
+          href: getPermalink('services/web-performance'),
+        },
+        {
+          text: 'Web Hosting & Maintenance',
+          href: getPermalink('services/ux-engineering'),
         },
       ]
     },
@@ -57,7 +65,7 @@ export const footerData = {
     {
       title: 'Projects',
       links: [
-        { text: 'Case Studies', href: '#' },
+        { text: 'Case Studies', href: getPermalink('/case-studies') },
         { text: 'Pricing', href: '#' },
         { text: 'Resources', href: '#' },
       ],
@@ -73,8 +81,8 @@ export const footerData = {
     {
       title: 'Company',
       links: [
-        { text: 'About Greg', href: '/about' },
-        { text: 'Contact Me', href: '/contact' },
+        { text: 'About Greg', href: getPermalink('/about') },
+        { text: 'Contact Me', href: getPermalink('/contact') },
         { text: 'Articles', href: getBlogPermalink() },
       ],
     },

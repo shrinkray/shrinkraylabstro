@@ -1,0 +1,99 @@
+---
+import { SITE } from '~/config.mjs';
+import { getCanonical, getHomePermalink } from '~/utils/permalinks';
+import Layout from '~/layouts/PageLayout.astro';
+import Banner from '~/components/widgets/Banner.astro';
+import Services from '~/components/widgets/Features2.astro';
+//import Background from '~/components/widgets/Background.astro';
+
+const meta = {
+	title: SITE.title,
+	description: SITE.description,
+	canonical: getCanonical(getHomePermalink()),
+};
+const page = {
+	title: 'My Services',
+	description:
+		'Services Overview',
+};
+const items = []
+---
+
+<Layout {meta}>
+	<Banner {page} />
+
+	<!-- Features2 Widget ************** -->
+
+  <Services
+    title="Top UX Design and Development Services"
+    subtitle="An overview of the services I offer to my customers."
+    highlight="foundations"
+    items={[
+      {
+        title: 'Accessibility Audits',
+        description:
+          'You may be ignoring a vast audience. Find out how to improve your digital assets, then get a spreadsheet identifying your website’s accessibility issues, what they are, and how to fix them.',
+        icon: 'flat-color-icons:template',
+				link: '/services/accessibility',
+      },
+      {
+        title: 'Design Systems',
+        description:
+          'A design system is a collection of reusable components, guided by clear standards, that can be assembled together to build any number of applications. Built in a collaborative tool such as Figma or Penpot, work with me to create a design system for your organization.',
+        icon: 'flat-color-icons:gallery',
+				link: '/services/ux-engineering',
+      },
+      {
+        title: 'Component Libraries',
+        description:
+          'If you have a design system, I will build a living library of reusable and functional Semantic HTML components, guided by clear standards, that can be assembled together to build any number of applications.',
+        icon: 'flat-color-icons:todo-list',
+				link: '/services/ux-engineering',
+      },
+      {
+        title: 'UX and Web Performance Audits',
+        description:
+          'With an audit, I will identify the issues that are slowing down your website. Then I use tools to monitor your workflow bugs, address problems, and work with you to resolve them.',
+        icon: 'flat-color-icons:inspection',
+				link: '/services/web-performance',
+      },
+      {
+        title: 'Hosting and Maintenance',
+        description:
+          'I will host your website on a secure server, and provide ongoing maintenance and support.',
+        icon: 'flat-color-icons:accept-database',
+				link: '/services/hosting-maintenance',
+      },
+      {
+        title: 'Mobile-first Design & Accessibility',
+        description:
+          'I will design and build your website conforming to standards and working great on all devices, from mobile to desktop.',
+        icon: 'flat-color-icons:smartphone-tablet',
+				link: '/services/ux-engineering',
+			},
+      {
+        title: 'SEO Content Refactoring',
+        description:
+          'SEO is not the glamorous part of web design, but it is essential. I will help you define your message, audience, and refactor your content to improve your SEO.',
+					icon: 'flat-color-icons:voice-presentation',
+					link: '/services/web-performance'
+      },
+      {
+        title: 'E-Commerce Solutions',
+        description:
+          'I will help you choose the right e-commerce solution for your business, and build your online store.',
+        icon: 'flat-color-icons:shop',
+				link: '/services/ux-engineering',
+      },
+      {
+        title: 'UX/UI Design',
+        description:
+          'If UX is Ying, then UI is Yang. I will design your website to be beautiful, functional, inspirational, and easy to use.',
+        icon: 'icon-park:page-template',
+				link: '/services/ux-engineering',
+      },
+    ]}
+  /> 
+	
+</Layout>
+s
