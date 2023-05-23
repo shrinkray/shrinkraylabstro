@@ -42,4 +42,9 @@ export interface MetaSEO {
     title?: string;
     role?: string;
     id?: string;
+    ariaHidden?: boolean;
+    ariaLabel?: string;
+    viewBox?: string;
+    width?: string;
+    height?: string;
   }
