@@ -28,15 +28,23 @@ export const headerData = {
       text: 'Services',
       links: [
         {
-          text: 'Accessibility, Web Performance, & SEO',
+          text: 'My Services',
+          href: getPermalink('services/my-services'),
+        },
+        {
+          text: 'Accessibility',
           href: getPermalink('services/accessibility'),
         },
         {
-          text: 'Web Design & Development',
+          text: 'UX Engineering',
+          href: getPermalink('services/ux-engineering'),
+        },
+        {
+          text: 'Web Performance, & SEO',
           href: getPermalink('services/web-performance'),
         },
         {
-          text: 'UX Engineering',
+          text: 'Web Hosting & Maintenance',
           href: getPermalink('services/ux-engineering'),
         },
       ]
