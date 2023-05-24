@@ -50,10 +50,6 @@ export const headerData = {
       ]
     },
     {
-      text: 'Contact',
-      href: getPermalink('/contact'),
-    },
-    {
       text: 'Articles',
       href: getBlogPermalink(),
     },
