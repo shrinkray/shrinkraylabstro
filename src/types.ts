@@ -37,14 +37,21 @@ export interface MetaSEO {
   ogType?: string;
 }
 
-  export interface SVGAttributes {
-    alt?: string;
-    title?: string;
-    role?: string;
-    id?: string;
-    ariaHidden?: boolean;
-    ariaLabel?: string;
-    viewBox?: string;
-    width?: string;
-    height?: string;
-  }
+export interface SVGAttributes {
+  alt?: string;
+  title?: string;
+  role?: string;
+  id?: string;
+  ariaHidden?: boolean;
+  ariaLabel?: string;
+  viewBox?: string;
+  width?: string;
+  height?: string;
+}
+
+export interface ImageMetadata {
+  width?: number;
+  height?: number;
+  src?: string;
+  alt?: string;
+}

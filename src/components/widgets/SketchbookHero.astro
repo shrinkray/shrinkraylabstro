@@ -14,7 +14,7 @@ export interface Props {
   callToAction?: string | CallToAction;
   callToAction2?: string | CallToAction;
   content?: string;
-  image?: string | any; // TODO: find HTMLElementProps
+  //image?: string | any; // TODO: find HTMLElementProps
 }
 
 const {
@@ -23,7 +23,7 @@ const {
   content = await Astro.slots.render('content'),
   callToAction = await Astro.slots.render('callToAction'),
   callToAction2 = await Astro.slots.render('callToAction2'),
-  image = await Astro.slots.render('image'),
+ // image = await Astro.slots.render('image'),
 } = Astro.props;
 ---
 
@@ -36,14 +36,14 @@ const {
 					class=" flex flex-row flex-wrap md:flex-nowrap justify-center relative w-full rounded-md sm:bg-[url('~/assets/images/design-sketchbook-op45.webp')] sm:dark:bg-slate-200 bg-left bg-fill bg-no-repeat  lg:justify-center col-gap-4 md:py-12"
 				>
       <!-- left-side -->
-					<div class="md:pl-4 flex flex-col items-center justify-center space-around text-gray-800" >
+					<div class="md:pl-4 flex flex-col items-center md:items-start md:justify-center space-around text-gray-800" >
 						<h2 class="font-extrabold text-4xl md:text-5xl dark:text-white sm:dark:text-gray-800 text-center md:text-start">
               <span class="whitespace-nowrap">Accessibility &</span>
               <span class="whitespace-nowrap">UX Engineer</span>
             </h2>
-              <p class="mt-4"><span class="text-3xl p-1 bg-violet-800 lg:text-4xl text-white">
-							Builder of web UI
-              </span></p>
+              <p class="mt-4 text-center md:text-start text-3xl p-1 bg-violet-800 md:text-4xl text-white "><span class="">
+							Builder of web UI</span>
+              </p>
 					</div>
       <!-- right side -->
           <div class="flex flex-col  w-full gap-y-4 pr-4 my-8" >

@@ -50,7 +50,7 @@ export const headerData = {
       ]
     },
     {
-      text: 'Contact Greg',
+      text: 'Contact',
       href: getPermalink('/contact'),
     },
     {

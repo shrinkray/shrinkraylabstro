@@ -1,0 +1,46 @@
+---
+import { Image, Picture } from '@astrojs/image/components'
+import  soss  from '~/assets/images/soss-logo.svg';
+import  nsbfoundation  from '~/assets/images/nsbfoundation.svg';
+import  lingua  from '~/assets/images/linguafonica-logo.svg';
+import  ayling  from '~/assets/images/aylingreichert-logo.svg';
+import  bikes  from '~/assets/images/toledobikes.svg';
+import  rdg  from '~/assets/images/rdglogo.svg';
+import  bfl  from '~/assets/images/bfl-logo.svg';
+---
+
+<section class="scroll-mt-16 py-24 bg-indigo-50 dark:bg-slate-800" >
+
+    <div class="mx-auto max-w-7xl px-6 lg:px-8">
+      <div class="grid grid-cols-1 items-center gap-x-8 gap-y-16 lg:grid-cols-2">
+        <div class="mx-auto w-full max-w-xl lg:mx-0">
+          <h2 class="mb-8 text-center md:text-left text-3xl lg:text-4xl font-bold font-heading">Trusted by these great companies</h2>
+          <p class="mt-6 text-lg leading-8">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et, egestas tempus tellus etiam sed. Quam a scelerisque amet ullamcorper eu enim et fermentum, augue.</p>
+          <div class="mt-8 flex justify-center sm:justify-start items-center gap-x-6">
+            <a href="#" class="btn btn-primary sm:mb-0 font-semibold text-white shadow-sm  hover:bg-indigo-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Contact Greg</a>
+            
+          </div>
+        </div>
+        <div class="bg-indigo-50 dark:bg-slate-200 p-8 rounded-xl">
+          <div class="mx-auto grid w-full max-w-xdl grid-cols-1 sm:grid-cols-3 lg:grid-cols-2 items-center justify-items-center gap-y-12 sm:gap-y-14 lg:mx-0 lg:max-w-none lg:pl-8 ">
+            
+            
+            <div class="w-full max-h-20 grid justify-center"><Image class="max-h-20 object-contain object-left" src={bfl} alt="BiG Fab Lab" /></div>
+            <div class="w-full flex justify-center"><Image class="max-h-16 object-contain object-left" src={nsbfoundation} alt="National Scenic Byway Foundation" /></div>
+            <div class="w-full flex justify-center"><Image class="max-h-10 object-contain object-left" src={lingua} alt="Lingua Fonica" /></div>
+            <div class="w-full flex justify-center"><Image class="max-h-12 object-contain object-left" src={rdg} alt="Research Data Gov" /></div>
+            <div class="w-full flex justify-center"><Image class="max-h-32 object-contain object-left" src={ayling} alt="Ayling Reichert" /></div>
+            
+            <div class="w-full flex justify-center"><Image class="max-h-20 object-contain object-left" src={bikes} alt="Toledo Bikes" /></div>
+            <div class="w-full flex justify-center"><Image class="max-h-16 object-contain object-left" src={soss} alt="Soss" /></div>
+            
+            
+            
+          
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
