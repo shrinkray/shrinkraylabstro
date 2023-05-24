@@ -28,7 +28,6 @@ const meta = {
   <Hero
     callToAction={{ text: 'Contact Greg', href: '/contact', icon: 'tabler:forms' }}
     callToAction2={{ text: 'Learn more', href: '#features' }}
-    image={{ src: import('~/assets/images/hero.png'), alt: 'AstroWind Hero Image' }}
   >
   
     <Fragment slot="title">
@@ -44,14 +43,13 @@ const meta = {
   <!-- Note Widget ******************* -->
 
   <Note />
-  <!-- Logo Carousel -->
-  <LogoCarousel />
+
 
   <!-- Features Widget *************** -->
 
   <Features
     highlight="Foundations"
-    title="<span class=''>Change is a beautiful thing </span><span class='whitespace-nowrap font-heading bg-clip-text text-transparent bg-gradient-to-r from-cyan-500 to-violet-500 dark:from-primary-300 dark:to-secondary-300'>Shrinkray Labs</span>"
+    title="Change is a beautiful thing <span class=''></span><span class='whitespace-nowrap font-heading bg-clip-text text-transparent bg-gradient-to-r from-cyan-500 to-violet-500 dark:from-primary-300 dark:to-secondary-300'>Shrinkray Labs</span>"
     subtitle="These are my foundational services which play a large part in projects I build."
     items={[
       [
