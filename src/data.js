@@ -8,19 +8,15 @@ export const headerData = {
       href: getPermalink('/about'),
     },
     {
-      text: 'Projects',
+      text: 'Products',
       links: [
         {
-          text: 'Case Studies',
-          href: getPermalink('/projects/case-studies'),
+          text: 'Built for You',
+          href: getPermalink('/products/built-for-you'),
         },
         {
-          text: 'Consulting',
-          href: getPermalink('/projects/consulting'),
-        },
-        {
-          text: 'Get Estimates',
-          href: getPermalink('/projects/get-estimates'),
+          text: 'Consulting & Case Studies',
+          href: getPermalink('/products/case-studies'),
         },
       ],
     },
@@ -96,6 +92,6 @@ export const footerData = {
   ],
   footNote: `
     <span class="w-5 h-5 md:w-6 md:h-6 md:-mt-0.5 bg-cover mr-1.5 float-left rounded-sm bg-[url(~/assets/images/favicon-48x48.png)]"></span>
-    Made with ❤️ love by <a class="text-blue-600 hover:underline dark:text-gray-200" href="https://shrinkraylabs.com/">Shrinkray Labs</a> · All rights reserved.
+    <span class="text-indigo-50">Made with ❤️ love by <a class="underline underline-offset-8 decoration-dotted hover:decoration-solid dark:text-gray-200" href="https://shrinkraylabs.com/">Shrinkray Labs</a> · All rights reserved.</span>
   `,
 };
