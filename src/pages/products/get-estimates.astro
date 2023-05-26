@@ -1,0 +1,24 @@
+---
+import { SITE } from '~/config.mjs';
+import { getCanonical, getHomePermalink } from '~/utils/permalinks';
+import Layout from '~/layouts/PageLayout.astro';
+import Banner from '~/components/widgets/Banner.astro';
+//import Background from '~/components/widgets/Background.astro';
+
+const meta = {
+	title: SITE.title,
+	description: SITE.description,
+	canonical: getCanonical(getHomePermalink()),
+};
+const page = {
+	title: 'Get Estimates',
+	description:
+		'estimates description',
+};
+const items = []
+---
+
+<Layout {meta}>
+	<Banner {page} />
+	
+</Layout>
