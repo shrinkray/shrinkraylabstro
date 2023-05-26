@@ -33,21 +33,22 @@ const {
 		
 			
 				<div
-					class="flex flex-row flex-wrap lg:flex-nowrap justify-center relative w-full rounded-lg lg:bg-[url('~/assets/images/design-sketchbook-op45.webp')] bg-indigo-50 dark:bg-slate-800 bg-left bg-fill bg-no-repeat  lg:justify-center col-gap-4 py-12"
+					class="flex flex-row flex-wrap lg:flex-nowrap  w-full rounded-lg lg:bg-[url('~/assets/images/design-sketchbook-op45.webp')] bg-cover bg-indigo-50 dark:bg-slate-800 bg-left bg-fill bg-no-repeat  col-gap-4 py-12 lg:align-center lg:justify-center"
 				>
         
       <!-- left-side -->
-					<div class="flex flex-col items-center lg:items-end md:justify-center space-around text-gray-800" >
-						<h2 class="font-extrabold text-center lg:text-end text-4xl md:text-5xl dark:text-white ">
-              <span class="whitespace-nowrap">Accessibility &</span>
-              <span class="whitespace-nowrap">UX Engineer</span>
+					<div class="flex justify-center items-center lg:justify-end  w-full gap-y-4 pr-4 gap-x-4 my-8 " >
+						<div class="flex flex-col max-width-prose">
+              <h2 class=" font-extrabold text-center  text-4xl md:text-5xl dark:text-white ">
+              <span class="whitespace-nowrap lg:mr-20 xl:mr-0">Accessibility &</span>
+              <span class="whitespace-nowrap lg:ml-20 xl:ml-0">UX Engineer</span>
             </h2>
-              <p class="mt-4 text-center lg:text-end text-3xl p-1 bg-violet-800 md:text-4xl text-white "><span class="">
-							Builder of web UI</span>
+              <p class="mt-4 text-center  text-3xl p-1 dark:text-violet-50 text-violet-900 dark:text-violet-200 md:text-4xl ">Builder of web UI
               </p>
+            </div>
 					</div>
       <!-- right side -->
-          <div class="flex flex-col  w-full gap-y-4 pr-4 my-8" >
+          <div class="w-full gap-y-4 pr-4 my-8" >
         <!-- Image + (greeting + buttons) -->
             <div class="flex flex-col items-center gap-y-4">
 
@@ -73,7 +74,7 @@ const {
 
 				    </div>
             <!-- ctas -->
-                <div class="flex flex-wrap justify-center gap-y-4 sm:flex-nowrap gap-x-4 sm:gap-y-0 ">
+                <div class="flex flex-wrap justify-center py-8 gap-y-4 sm:flex-nowrap gap-x-4  ">
                     {
                     callToAction && (
                       <div class="flex w-auto ">
