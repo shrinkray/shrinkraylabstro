@@ -2,18 +2,14 @@
 import { SITE } from '~/config.mjs';
 import Layout from '~/layouts/PageLayout.astro';
 
-import Hero from '~/components/widgets/SketchbookHero.astro';
+import SketchbookHero from '~/components/widgets/SketchbookHero.astro';
 import Note from '~/components/widgets/Note.astro';
 import Features from '~/components/widgets/Features.astro';
-//import Features2 from '~/components/widgets/Features2.astro';
 import Steps from '~/components/widgets/Steps.astro';
-import Content from '~/components/widgets/Content.astro';
 import LatestPosts from '~/components/blog/LatestPosts.astro';
-//import FAQs from '~/components/widgets/FAQs.astro';
-//import Stats from '~/components/widgets/Stats.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 import Flask from '~/components/Flask.astro';
-import LogoCarousel from '~/components/widgets/LogoCarousel.astro';
+
 
 const meta = {
   title: SITE.title,
@@ -23,9 +19,9 @@ const meta = {
 ---
 
 <Layout {meta}>
-  <!-- Hero Widget ******************* -->
 
-  <Hero
+
+  <SketchbookHero
     callToAction={{ text: 'Contact Greg', href: '/contact', icon: 'tabler:forms' }}
     callToAction2={{ text: 'Learn more', href: '#features' }}
   >
@@ -38,14 +34,14 @@ const meta = {
       <p class="text-2xl text-center">I build a variety of websites plus services for 📦 eCommerce, 💳 Small Business, Saas, Professional Portfolios, 💼 Marketing Websites, Landing Pages & More.</p>
       <span class="block mb-1 py-4 text-2xl font-bold text-blue-600 text-center">I look forward to connecting with you!</span> 
     </Fragment>
-  </Hero>
+  </SketchbookHero>
 
-  <!-- Note Widget ******************* -->
+
 
   <Note />
 
 
-  <!-- Features Widget *************** -->
+
 
   <Features
     highlight="Foundations"
@@ -116,7 +112,7 @@ const meta = {
       {
         title: '<span class="font-medium">AstroJS</span>',
         description:
-          'Astro.js is a modern front-end framework and like Next.js, it is optimized for websites, blogs, and marketing pages. This site is built in Astro to show you how much I ❤️ love it.',
+          'Astro.js is a modern front-end framework and like Next.js, it is optimized for websites, blogs, and marketing pages. This site is built in Astro to show you how much I love building static sites.',
         icon: 'simple-icons:astro',
       },
       {
