@@ -31,6 +31,7 @@ const image = await findImage(post.image);
             aspectRatio="16:9"
             loading="lazy"
             decoding="async"
+            formats={['jpg', 'png', 'webp']}
           />
         </a>
       )
