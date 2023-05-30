@@ -44,7 +44,9 @@
     "typescript": "^5.0.4"
   },
   "engines": {
-    "node": ">=16.12.0"
+    "node": ">=16.12.0",
+    "npm": ">=8.0.0 <9.0.0",
+    "pnpm": ">=8.4.0"
   },
   "dependencies": {
     "@astrojs/cloudflare": "^6.3.0",
