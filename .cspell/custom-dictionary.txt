@@ -1,6 +1,14 @@
 # Custom Dictionary Words
 astro
+astrojs
+astrolib
+astrowind
+fontsource
+limax
+mdast
 nofollow
+onwidget
+partytown
 tabler
 tailwindcss
 tsconfigs
