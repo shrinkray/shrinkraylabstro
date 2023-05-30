@@ -10,7 +10,6 @@ import compress from 'astro-compress';
 import { readingTimeRemarkPlugin } from './src/utils/frontmatter.mjs';
 import { SITE } from './src/config.mjs';
 import react from "@astrojs/react";
-import cloudflare from "@astrojs/cloudflare";
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const whenExternalScripts = (items = []) => SITE.googleAnalyticsId ? Array.isArray(items) ? items.map(item => item()) : [items()] : [];
 
@@ -50,10 +49,5 @@ export default defineConfig({
         '~': path.resolve(__dirname, './src')
       }
     }
-  },
-  adapter: cloudflare(),
-  output: 'hybrid',
-  experimental: {
-    hybridOutput: true,
   },
 });
