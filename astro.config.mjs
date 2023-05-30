@@ -52,5 +52,8 @@ export default defineConfig({
     }
   },
   adapter: cloudflare(),
-  output: 'server',
+  output: 'hybrid',
+  experimental: {
+    hybridOutput: true,
+  },
 });
