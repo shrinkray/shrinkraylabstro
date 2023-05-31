@@ -1,0 +1,101 @@
+---
+import { SITE } from '~/config.mjs';
+import { getCanonical, getHomePermalink } from '~/utils/permalinks';
+import Layout from '~/layouts/PageLayout.astro';
+import Banner from '~/components/widgets/Banner.astro';
+import Products from '~/components/widgets/Products.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+//import Background from '~/components/widgets/Background.astro';
+
+const meta = {
+	title: SITE.title,
+	description: SITE.description,
+	canonical: getCanonical(getHomePermalink()),
+};
+const page = {
+	title: 'Let\'s build something great together',
+	description:
+		'These are the types of projects I\'m interested in working on. If you have something else in mind, let\'s talk about it.',
+};
+const items = []
+---
+
+<Layout {meta}>
+	<Banner {page} />
+
+<section class="mt-4 py-20 ">
+	<div class=" mx-auto px-4 sm:px-6 max-w-3xl">
+
+		<div class="text-center">
+			<h2 class="text-3xl font-extrabold text-gray-900 dark:text-gray-100 sm:text-4xl">
+				What does WordPress, Astro, NextJS have in common?</h2>
+			<p class="text-2xl py-4">These lead many others are technologies I believe in and am focusing my efforts delivering expertise to my customers. </p>
+		</div>
+	</div>
+</section>
+
+<!-- Steps Widget ****************** -->
+
+  <Products
+    title="What will <span class='whitespace-nowrap font-heading bg-clip-text text-transparent bg-gradient-to-r from-cyan-500 to-violet-500 dark:from-primary-300 dark:to-secondary-300'>Shrinkray Labs</span> <span class='whitespace-nowrap'>build for you?</span>"
+    intro="<p class='text-2xl pb-4'>These are my go-to technologies that are a sure-fire win.</p>"
+    items={[
+      {
+        title: '<span class="font-medium">WordPress</span>',
+        description:
+          'You\'ll find I offer a full service, including site design, custom development, security, marketing, and maintenance. This is the backbone of my business. I\'ve been building custom WordPress marketing and eCommerce sites for over 10 years.',
+        icon: 'simple-icons:wordpress',
+      },
+      {
+        title: '<span class="font-medium">NextJS</span>',
+        description:
+          'Do you have a need for data-driven sites and apps where performance and efficiency is paramount? Next.js is a framework (like a set of tools) created for web applications. The technology is developed and optimized for search engines.',
+        icon: 'tabler:tools',
+      },
+      {
+        title: '<span class="font-medium">AstroJS</span>',
+        description:
+          'Astro.js is a modern front-end framework and like Next.js, it is optimized for websites, blogs, and marketing pages. This site is built in Astro to show you how much I love building static sites.',
+        icon: 'simple-icons:astro',
+      },
+      {
+        title: '<span class="font-medium">Accessibility, Web Performance, and SEO</span>',
+        description:
+          'Everyone must be able to use a website, no matter if they have disabilities or not. When building sites, web performance is integrated from the beginning of your project. Designng and building for Accessibility and Performance directly improves your SEO. All together, they help create a website that\'s quick, easy to use, and findable.',
+        icon: 'mdi:performance',
+      },
+      {
+        title: 'Let\'s Get Started!',
+				description: '',
+        icon: 'tabler:check',
+      },
+    ]}
+    
+  />
+
+
+
+  <!-- CallToAction Widget *********** -->
+
+  <CallToAction
+    callToAction={{
+      text: 'Contact Me',
+      href: '/contact',
+      icon: 'tabler:forms',
+    }}
+  >
+    <Fragment slot="title">
+      <span class='whitespace-nowrap font-heading bg-clip-text text-transparent bg-gradient-to-r from-cyan-500 to-violet-500 dark:from-primary-300 dark:to-secondary-300'>Shrinkray Labs</span> 
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      Have a project in mind? Let's talk. 
+    </Fragment>
+  </CallToAction>
+
+
+
+
+</Layout>
+
+  
