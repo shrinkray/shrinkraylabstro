@@ -23,6 +23,12 @@ package-lock.json
 pnpm-lock.yaml
 
 .astro
+<<<<<<< Updated upstream
 
 # How to use this template
+=======
+.vercel
+
+# demo content
+>>>>>>> Stashed changes
 src/content/post/markdown-elements-demo-post.mdx
