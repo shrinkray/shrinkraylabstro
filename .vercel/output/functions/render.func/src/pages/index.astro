@@ -1,0 +1,169 @@
+---
+import { SITE } from '~/config.mjs';
+import Layout from '~/layouts/PageLayout.astro';
+
+import SketchbookHero from '~/components/widgets/SketchbookHero.astro';
+import Note from '~/components/widgets/Note.astro';
+import Features from '~/components/widgets/Features.astro';
+import Steps from '~/components/widgets/Steps.astro';
+import LatestPosts from '~/components/blog/LatestPosts.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import Flask from '~/components/Flask.astro';
+
+
+const meta = {
+  title: SITE.title,
+  description: SITE.description,
+  dontUseTitleTemplate: true,
+};
+---
+
+<Layout {meta}>
+
+
+  <SketchbookHero
+    callToAction={{ text: 'Contact Greg', href: '/contact', icon: 'tabler:forms' }}
+    callToAction2={{ text: 'Learn more', href: '#features' }}
+  >
+  
+    <Fragment slot="title">
+      Shrinkray<Flask />Labs
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      <p class="text-2xl text-center">I build a variety of websites plus services for 📦 eCommerce, 💳 Small Business, Saas, Professional Portfolios, 💼 Marketing Websites, Landing Pages & More.</p>
+      <span class="block mb-1 py-4 text-2xl font-bold text-blue-600 text-center">I look forward to connecting with you!</span> 
+    </Fragment>
+  </SketchbookHero>
+
+
+
+  <Note />
+
+
+
+
+  <Features
+    highlight="Foundations"
+    title="Change is a beautiful thing: <span class=''></span><span class='whitespace-nowrap font-heading bg-clip-text text-transparent bg-gradient-to-r from-cyan-500 to-violet-500 dark:from-primary-300 dark:to-secondary-300'>Shrinkray Labs</span>"
+    subtitle="These are my foundational services which play a large part in projects I build."
+    items={[
+      [
+        {
+          title: 'Building with Semantic HTML',
+          description:
+            'The benefit of writing semantic HTML stems from what should be the driving goal of any web page: the desire to communicate with all.',
+          icon: 'icomoon-free:html-five2',
+        },
+        {
+          title: 'Mobile First Responsive Design',
+          description:
+            'Responsive web design ensures websites offer a seamless and high-quality on-site experience for any digital user, regardless of the device.',
+          icon: 'ic:outline-mobile-friendly',
+        },
+        {
+          title: 'Best Practices',
+          description:
+            'I admit I like to do things right the first time to reduce the need for rework.',
+          icon: 'ci:list-checklist',
+        },
+      ],
+      [
+        {
+          title: 'Accessibility and Inclusivity',
+          description:
+            'Recognizing disability and delivering Web assests that bring your services to all.',
+          icon: 'ic:round-settings-accessibility',
+        },
+        {
+          title: 'Performance and SEO',
+          description:
+            'How fast does your website feels to your users? Slow web pages frustrate users. SEO will improve with great performance.',
+          icon: 'mdi:performance',
+        },
+        {
+          title: 'Unify your Brand with Design Systems',
+          description:
+            'What we were able satisfy your interface needs with an evolving set of components intended to guide consistency with standards?  Design systems manage design at scale using reusable patterns.',
+            icon: 'fluent:design-ideas-24-regular',
+        },
+      ],
+    ]}
+  />
+
+
+  <!-- Steps Widget ****************** -->
+
+  <Steps
+    title="What will <span class='whitespace-nowrap font-heading bg-clip-text text-transparent bg-gradient-to-r from-cyan-500 to-violet-500 dark:from-primary-300 dark:to-secondary-300'>Shrinkray Labs</span> <span class='whitespace-nowrap'>build for you?</span>"
+    items={[
+      {
+        title: '<span class="font-medium">WordPress</span>',
+        description:
+          'You\'ll find I offer a full service, including site design, custom development, security, marketing, and maintenance. This is the backbone of my business. I\'ve been building custom WordPress marketing and eCommerce sites for over 10 years.',
+        icon: 'simple-icons:wordpress',
+      },
+      {
+        title: '<span class="font-medium">NextJS</span>',
+        description:
+          'Do you have a need for data-driven sites and apps where performance and efficiency is paramount? Next.js is a framework (like a set of tools) created for web applications. The technology is developed and optimized for search engines.',
+        icon: 'tabler:tools',
+      },
+      {
+        title: '<span class="font-medium">AstroJS</span>',
+        description:
+          'Astro.js is a modern front-end framework and like Next.js, it is optimized for websites, blogs, and marketing pages. This site is built in Astro to show you how much I love building static sites.',
+        icon: 'simple-icons:astro',
+      },
+      {
+        title: '<span class="font-medium">Accessibility, Web Performance, and SEO</span>',
+        description:
+          'Everyone must be able to use a website, no matter if they have disabilities or not. When building sites, web performance is integrated from the beginning of your project. Designng and building for Accessibility and Performance directly improves your SEO. All together, they help create a website that\'s quick, easy to use, and findable.',
+        icon: 'mdi:performance',
+      },
+      {
+        title: 'Let\'s Get Started!',
+        icon: 'tabler:check',
+      },
+    ]}
+    image={{
+      src: import('~/assets/images/sharing.webp'),
+      alt: 'Three ',
+    }}
+  />
+
+  <!-- HighlightedPosts Widget ******* -->
+
+  <LatestPosts
+    title="<span class='tracking-tight'>Discoveries and News</span>"
+    information={`This blog will contain posts about my interests in web development, design, and other topics.
+		`}
+    postIds={[
+      'get-started-website-with-astro-tailwind-css.md',
+      'how-to-customize-astrowind-to-your-brand.md',
+      'useful-resources-to-create-websites.md',
+      'astrowind-template-in-depth.md',
+    ]}
+  />
+
+ 
+
+  
+  <!-- CallToAction Widget *********** -->
+
+  <CallToAction
+    callToAction={{
+      text: 'Contact Me',
+      href: '/contact',
+      icon: 'tabler:forms',
+    }}
+  >
+    <Fragment slot="title">
+      <span class='whitespace-nowrap font-heading bg-clip-text text-transparent bg-gradient-to-r from-cyan-500 to-violet-500 dark:from-primary-300 dark:to-secondary-300'>Shrinkray Labs</span> 
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      Have a project in mind? Let's talk. 
+    </Fragment>
+  </CallToAction>
+</Layout>
