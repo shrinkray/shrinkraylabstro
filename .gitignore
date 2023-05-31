@@ -23,3 +23,6 @@ package-lock.json
 pnpm-lock.yaml
 
 .astro
+
+# How to use this template
+src/content/post/markdown-elements-demo-post.mdx
