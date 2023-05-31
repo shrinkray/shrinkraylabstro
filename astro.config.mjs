@@ -20,8 +20,11 @@ export default defineConfig({
   site: SITE.origin,
   base: SITE.basePathname,
   trailingSlash: SITE.trailingSlash ? 'always' : 'never',
-  output: 'server',
+  output: 'hybrid',
   adapter: vercel(),
+  experimental: {
+    'hybridOutput': true
+  },
   markdown: {
     remarkPlugins: [readingTimeRemarkPlugin]
   },
