@@ -1,6 +1,7 @@
 # build output
 dist/
 .output/
+.vercel*
 
 # dependencies
 node_modules/
@@ -23,12 +24,6 @@ package-lock.json
 pnpm-lock.yaml
 
 .astro
-<<<<<<< Updated upstream
 
-# How to use this template
-=======
-.vercel
-
-# demo content
->>>>>>> Stashed changes
+# How to use mdx
 src/content/post/markdown-elements-demo-post.mdx
