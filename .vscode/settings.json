@@ -4,7 +4,7 @@
     "javascript",
     "javascriptreact",
     "astro", // Enable .astro
-    "typescript", // Enable .ts
+    "typescript", // Enable .tsx
     "typescriptreact" // Enable .tsx
   ],
   "files.associations": {
@@ -14,6 +14,10 @@
   "[astro]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+
   "workbench.colorCustomizations": {
     "activityBar.activeBackground": "#3399ff",
     "activityBar.background": "#3399ff",
